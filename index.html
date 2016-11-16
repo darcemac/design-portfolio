@@ -1,0 +1,28 @@
+---
+layout: default
+title: Home
+---
+
+<div class="section main" id="featured-work">
+  <div class="container">
+    <div class="inner-wrapper">
+
+      <div class="row">
+          <h2 class="callout">At Blueskyatnight we use design and technology to transform ideas, businesses and brands.</h2>
+          <h5 class="page-title"><span class="underline">Featured Projects</span></h5>
+      </div>
+
+      <div class="row">
+        <ul class="projects">
+          {% for post in site.posts limit:6 %}
+          <li>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }} project link">
+            <div class="img-wrap"><img src="{{ post.thumb }}" alt="{{ post.title }} thumbnail image"/></div></a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>

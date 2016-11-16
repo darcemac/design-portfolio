@@ -1,0 +1,74 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{% if page.title == 'Home' %}{{ site.title }}{% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="author" content="{{ site.name }}">
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ site.url }}/sitemap.xml">
+    <meta name="google-site-verification" content="PR07Ho7D9LHEcvx7eW9g_v_vNouwHfRdwt7D2SiVLVI">
+
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:image" content="{% if page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.icon | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="{{ site.locale }}">
+
+    <style>body{opacity:1;-webkit-transition:opacity 1s;transition:opacity 1s}body.fade-out{opacity:0;transition:none}@-webkit-keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}h1,ul{margin-top:0}.columns,.container{width:100%;box-sizing:border-box}.header,a{background-color:transparent}.nav,.nav li,ul{list-style:none}.mobilenav li a,.nav a,a{text-decoration:none}*{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}html{font-size:62.5%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{font-family:'GT Walsheim','Helvetica Neue',Arial,sans-serif;font-size:1.5em;line-height:1.6;font-weight:400;font-style:normal;color:#272F38;opacity:1;margin:0}.mobilenav li a,.nav li a,h1{font-weight:300}body.fade-out{opacity:0}h1{margin-bottom:2rem;font-size:4rem;line-height:1.2;letter-spacing:-.1rem}li{margin-bottom:1rem}ul{padding-left:0;margin-bottom:2.5rem}svg:not(:root){overflow:hidden}.container{position:relative;max-width:1400px;margin:0 auto;padding:0 20px}.columns{float:left}@media (min-width:400px){.container{width:85%;padding:0}}@media (min-width:550px){h1{font-size:5rem}.container{width:80%}.columns{margin-left:4%}.columns:first-child{margin-left:0}.twelve.columns{width:100%;margin-left:0}}.container:after,.row:after{content:"";display:table;clear:both}.logo,.nav a,.nav li a{display:block}.header{position:fixed;top:0;left:0;width:100%;padding:0;z-index:100;height:auto}@media (min-width:400px){.header{height:100px}}.logo{float:left;margin-top:25px;z-index:100}@media (min-width:750px){.logo{margin-top:35px}}.logo svg{width:180px;height:auto}@media (min-width:400px){.logo svg{width:200px}}.bottom-menu,.mid-menu,.top-menu{width:18px;height:2px;border-radius:10px;background-color:#fff}.nav{float:right}.nav,.nav li{padding:0;margin:0}.nav li{float:left;padding-left:3em}.nav li a{font-family:'GT Walsheim';color:#fff;letter-spacing:.9px;font-size:18px;line-height:100px}.nav li a::after{border-bottom:solid 1px #fff}.div2{display:none}.icon{margin-top:16px}@media screen and (max-width:750px){ul.nav{display:none!important}.div2{display:block}}.top-menu{top:7px}.mid-menu{top:13px}.bottom-menu{top:19px}.menui{background:#fff;margin-top:10px;position:absolute}.icon,.mobilenav{z-index:100;position:fixed;top:0}.icon{display:block;padding:24px;height:32px;width:32px;right:0}.mobilenav{font-family:inherit;left:0;display:none;width:100%;height:100%;background:#18313A}.mobilenav li{list-style-type:none;text-align:center;padding:10px}.mobilenav li a{font-size:150%;color:#fff;width:100%}.mobilenav li:first-child{margin-top:60px}.banner-lg{width:100%;height:100vh;background:top no-repeat;background-size:cover;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;top:0}.banner-sm{height:480px;display:block;position:relative;top:0;margin:0;padding:0;width:100%;background-size:cover;background-position:center center;-ms-behavior:url(/backgroundsize.min.htc);transition:all .2s ease-in-out}@media (min-width:750px){.banner-sm{height:600px}}@media only screen and (min-device-width :768px) and (max-device-width :1024px) and (orientation :landscape){.banner-lg{height:768px}}@media only screen and (min-device-width :768px) and (max-device-width :1024px) and (orientation :portrait){.banner-lg{height:1024px}}@media only screen and (min-device-width:320px) and (max-device-height:568px) and (orientation :landscape) and (-webkit-device-pixel-ratio:2){.banner-lg{height:320px}}@media only screen and (min-device-width:320px) and (max-device-height:568px) and (orientation :portrait) and (-webkit-device-pixel-ratio:2){.banner-lg{height:568px}}@media only screen and (min-device-width :320px) and (max-device-width :480px) and (orientation :landscape) and (-webkit-min-device-pixel-ratio :2){.banner-lg{height:320px}}@media only screen and (min-device-width :320px) and (max-device-width :480px) and (orientation :portrait) and (-webkit-min-device-pixel-ratio :2){.banner-lg{height:480px}}.banner-text{position:fixed;top:280px;top:50%;text-align:center;width:100%}.banner-text h1{text-align:center;color:#fff;font-size:64px;letter-spacing:2px;display:block;position:relative;margin:0 auto;padding:0;font-family:'GT Sectra Display Bold';font-weight:700}.banner-detail span{width:80px;height:80px;position:absolute;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}@media (min-width:400px){.banner-detail span{width:100px;height:100px}}@media (min-width:750px){.banner-detail span{width:120px;height:120px}}</style>
+
+    <script>
+        (function(w){
+          "use strict";
+          var loadCSS = function( href, before, media ){
+            var doc = w.document;
+            var ss = doc.createElement( "link" );
+            var ref;
+            if( before ){
+              ref = before;
+            }
+            else {
+              var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+              ref = refs[ refs.length - 1];
+            }
+            var sheets = doc.styleSheets;
+            ss.rel = "stylesheet";
+            ss.href = href;
+            ss.media = "only x";
+            ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+            var onloadcssdefined = function( cb ){
+              var resolvedHref = ss.href;
+              var i = sheets.length;
+              while( i-- ){
+                if( sheets[ i ].href === resolvedHref ){
+                  return cb();
+                }
+              }
+              setTimeout(function() {
+                onloadcssdefined( cb );
+              });
+            };
+            ss.onloadcssdefined = onloadcssdefined;
+            onloadcssdefined(function() {
+              ss.media = media || "all";
+            });
+            return ss;
+          };
+          if( typeof module !== "undefined" ){
+            module.exports = loadCSS;
+          }
+          else {
+            w.loadCSS = loadCSS;
+          }
+        }( typeof global !== "undefined" ? global : this ));
+        loadCSS( "{{ site.baseurl }}/css/all.css" );
+    </script>
+    <noscript><link href="{{ site.baseurl }}/css/all.css" rel="stylesheet"></noscript>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+

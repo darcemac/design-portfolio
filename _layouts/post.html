@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+{% if page.feature %}
+<div class="row">
+	{% for shots in page.feature %}
+	<div class="banner-sm" style="background-image: url('{{ site.baseurl }}/images/work/{{ shots.image }}')" alt="{{ page.title }} banner image">
+	{% endfor %}
+</div>
+{% endif %}
+
+<div class="section main">
+	<div class="container">
+		<div class="inner-wrapper">
+
+			<div class="row">
+		        <h1 class="post-title" alt="{{ page.title }} post title">{{ page.title }}</h1>
+		    </div>
+
+		    <div class="project-content">
+		    	{{ content }}
+			    <div class="project-link">
+			    	<h5 class="project-url"><a href="{{ page.link }}" target="_blank">View Site</a></h5>
+			    </div>
+		    </div>
+
+			<div class="project-images">
+				{% if page.work %}
+				<div class="row">
+					<div class="twelve columns">
+				      {% for shots in page.work %}
+				      	<img src="{{ site.baseurl }}/images/work/{{ shots.image }}" alt="{{ page.title }} image">
+				      {% endfor %}
+					</div>
+				</div>
+				{% endif %}
+			</div>
+
+			<div class="row">
+				<div class="post-nav">
+
+					{% if page.previous.url %}
+					<a class="prev" href="{{page.previous.url}}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="78.138" height="60.092" viewBox="0 0 78.138 60.092"><g fill="none" stroke="#B5B5B5" stroke-width="2.5"><path d="M31.794.896l-30 29.15 30 29.15M2.138 30.047h76"/></g></svg>
+					</a>
+					{% endif %}
+
+					{% if page.next.url %}
+					<a class="next" href="{{page.next.url}}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="78.138" height="60.092" viewBox="0 0 78.138 60.092"><g fill="none" stroke="#B5B5B5" stroke-width="2.5"><path d="M46.344 59.196l30-29.15-30-29.15M76 30.046H0"/></g></svg>
+					</a>
+					{% endif %}
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="back-link">
+					<p><a href='/'>Back to projects</a></p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
